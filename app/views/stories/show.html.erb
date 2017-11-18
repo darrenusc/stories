@@ -2,6 +2,6 @@
 
 <p><%= @story.body %></p>
 
-<%= link_to "delete", story_path(@story), data: {confirm: "Really delete the article?", method: :delete} %><br>
+<%= link_to "edit", edit_story_path(@story) %>
+<%= link_to "delete", story_path(@story), method: :delete, data: {confirm: "Really delete the article?"} %><br>
 <%= link_to "<< Back to Stories List", stories_path %>
-
