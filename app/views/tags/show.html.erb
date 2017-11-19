@@ -1,0 +1,9 @@
+<h1>Stories Tagged with <%= @tag.name %></h1>
+
+<ul>
+  <% @tag.stories.each do |story| %>
+    <li><%= link_to story.title, story_path(story) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "<< Back to Tags List", tags_path %>

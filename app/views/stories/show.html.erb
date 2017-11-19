@@ -12,8 +12,8 @@
 <%= link_to "edit", edit_story_path(@story) %>
 <%= link_to "delete", story_path(@story), method: :delete, data: {confirm: "Really delete the article?"} %><br>
 
+<%= link_to "<< Back to Stories List", stories_path %><br>
+
 <h3>Comments (<%= @story.comments.size %>)</h3>
 <%= render partial: 'stories/comment', collection: @story.comments %>
 <%= render partial: 'comments/form' %>
-
-<%= link_to "<< Back to Stories List", stories_path %>
