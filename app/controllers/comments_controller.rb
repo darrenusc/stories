@@ -5,6 +5,12 @@ class CommentsController < ApplicationController
     @comment.save
     redirect_to story_path(@comment.story)
   end
+
+  def destroy
+    @comment = Comment.find(params[:id]).destroy
+    flash.notice = "Comment by '#{@comment.author}' Deleted!"
+    redirect_to story_path
+  end
   
   def comment_params
     params.require(:comment).permit(:author, :body)
