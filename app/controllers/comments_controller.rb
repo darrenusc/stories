@@ -7,9 +7,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id]).destroy
+    @story = Story.find(params[:story_id])
+    @comment = @story.comments.find(params[:id]).destroy
     flash.notice = "Comment by '#{@comment.author}' Deleted!"
-    redirect_to story_path
+    redirect_to story_path(@story)
   end
   
   def comment_params
