@@ -1,6 +1,9 @@
 class StoriesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_for_cancel, :only => [:create, :update]
+
   include StoriesHelper
-  
+
   def index
     @stories = Story.all
   end
@@ -37,5 +40,12 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:id]).destroy
     flash.notice = "Story '#{@story.title}' Deleted!"
     redirect_to stories_path
+  end
+
+  # Cancel action for create and update
+  def check_for_cancel
+    if params[:commit] == "Cancel"
+      redirect_to stories_path
+    end
   end
 end
