@@ -10,6 +10,11 @@
 
   <body>
     <p class="flash"><%= flash.notice %></p>
+    
+    <%# Flash messages for Devise %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
     <%= yield %>
   </body>
 </html>
