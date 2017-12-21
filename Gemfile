@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # # jQuery for Rails
 # gem 'jquery-rails'
 
+# Use Bootstrap for responsive design
+gem 'bootstrap', '~> 4.0.0.beta2'
 # Use Devise for authentication
 gem 'devise'
 
